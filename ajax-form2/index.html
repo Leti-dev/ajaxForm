@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Ajax Form 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main>
+      <form>
+        <h1>Remplir les champs ci-dessous</h1>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputLastName">Nom</label>
+              <input type="text" class="form-control" id="inputLastName" placeholder="Votre nom">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputFirstName">Prénom</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Votre prénom">
+              </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Adresse">
+            </div>
+          <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip" placeholder="CP">
+            </div>
+          <div class="form-group col-md-4">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" placeholder="Ville">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-7">
+            <h2>Carte d'identité</h2>
+            <p>La carte d'identité doit être en cours de validité. Les formats autorisés sont JPG, GIF et PNG.</p>
+          </div>
+          <div class="custom-file col-md-5">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label" for="validatedCustomFile">Carte d'identité</label> 
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        
+      </form>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>

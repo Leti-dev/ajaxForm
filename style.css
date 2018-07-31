@@ -1,0 +1,19 @@
+form{
+    max-width: 40%;
+    margin: 15rem auto;
+}
+
+label:not(.form-check-label){
+    position: absolute;
+    left: -500px;
+}
+
+.alert-danger, .alert-success{
+    display: none;
+    max-width: 40%;
+    text-align: center;
+}
+
+.alert-success{
+    margin: 15rem auto;
+}
