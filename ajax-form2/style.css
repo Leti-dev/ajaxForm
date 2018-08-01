@@ -1,6 +1,6 @@
 form{
     max-width: 40%;
-    margin: 15rem auto;
+    margin: 1rem;
 }
 
 label{
@@ -10,4 +10,20 @@ label{
 
 button, #inputEmail4{
     width: 30rem;
+}
+
+.alert-danger, .alert-success{
+    display: none;
+    text-align: center;
+}
+
+.infos{
+    background: #fff; 
+    display:none;
+    text-align: center;
+    margin-left: 2rem;
+}
+.infos img {    
+    max-width: 100%;
+    margin: 20px auto;
 }

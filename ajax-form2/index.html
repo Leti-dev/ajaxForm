@@ -13,37 +13,39 @@
 
     </header>
 
-    <main>
-      <form>
+    <main class="container form-row">
+      <form onsubmit="getDataForm();return false;" class="col-md-7">
         <h1>Remplir les champs ci-dessous</h1>
+        <div class="alert alert-success col-md-12">Données enregistrées</div>
+        <div id="tryAgain" class="alert alert-danger col-md-12"></div>
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="mail">
           </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputLastName">Nom</label>
-              <input type="text" class="form-control" id="inputLastName" placeholder="Votre nom">
+              <input type="text" class="form-control" id="inputLastName" placeholder="Votre nom" name="lastName">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputFirstName">Prénom</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Votre prénom">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Votre prénom" name="firstName">
               </div>
           </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Adresse">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Adresse" name="address">
             </div>
           <div class="form-group col-md-2">
               <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip" placeholder="CP">
+              <input type="text" class="form-control" id="inputZip" placeholder="CP" name="zip">
             </div>
           <div class="form-group col-md-4">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity" placeholder="Ville">
+            <input type="text" class="form-control" id="inputCity" placeholder="Ville" name="city">
           </div>
         </div>
         <div class="form-row">
@@ -52,17 +54,22 @@
             <p>La carte d'identité doit être en cours de validité. Les formats autorisés sont JPG, GIF et PNG.</p>
           </div>
           <div class="custom-file col-md-5">
-            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required name="file">
             <label class="custom-file-label" for="validatedCustomFile">Carte d'identité</label> 
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>
         
       </form>
+      <div class="col-md-4 infos">
+        <img src="">
+        <h2></h2>
+        <p></p>
+      </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="index.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
