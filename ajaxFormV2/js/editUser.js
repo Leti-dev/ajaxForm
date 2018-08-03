@@ -6,6 +6,7 @@ $(document).ready(function(){
         $(".custom-file-label").text($('#customFile').get(0).files[0].name);
     });
     $('#inputEmail').on('input', search);
+    $(document).on('load', searchById());
     
 });
 
@@ -53,7 +54,6 @@ function search(){
         data: { email: email },
         dataType: 'json',
         success: function(data){
-            console.log(data);
             if(data.result == "true"){
                 $(".infos").show();
                 if (data.cni != false) $("#image").attr('src', "upload/" + data.cni);
@@ -67,4 +67,53 @@ function search(){
             console.log(errorThrown);
         }
     });
+}
+
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
+
+function searchById(){
+    var id = $_GET('id');
+     $.ajax({
+         url: 'php/searchUser_id.php',
+         method: 'POST',
+         data: { id: id },
+         dataType: 'json',
+         success: function(data){
+             $("#image").show();
+            $("input[name=email]").val(data.email);
+            $("input[name=nom]").val(data.lastname);
+            $("input[name=prenom]").val(data.firstname);
+            $("input[name=adresse]").val(data.address);
+            $("input[name=cp]").val(data.postalCode);
+            $("input[name=ville]").val(data.city);
+            $(".infos").show();
+            if (data.firstname && data.lastname && data.postalCode && data.city && data.cni != false){ 
+                $("#image").attr('src', "upload/" + data.cni);
+                $("#infoEmail").text(data.lastname + " " + data.firstname);
+                $("#infoLoc").text(data.address + " " + data.postalCode + " " + data.city);
+            }else{
+                $("#image").hide();
+                $("#infoLoc").text(data.email);
+            }
+         },
+         error: function(jqXHR, textStatus, errorThrown){
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+        }
+         
+     });
 }

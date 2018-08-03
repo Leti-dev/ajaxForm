@@ -1,19 +1,14 @@
-<div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-</div>
-
-console.log('toto');
-
 $.ajax({
     url: 'php/getUsers.php',
     method: 'POST',
     dataType: 'json',
     success: function(data){
-        for(i = 0; i<Data.length)
+        for(i = 0; i<data.length; i++){
+            if(data[i].firstname && data[i].lastname && data[i].postalCode && data[i].city && data[i].cni != null){
+            $("#listAll").append("<div class='card' ><img class='card-img-top' src='upload/" + data[i].cni + "' alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + data[i].lastname + " " + data[i].firstname + "</h5><p class='card-text'>" + data[i].address + " " + data[i].postalCode + " " + data[i].city + "</p><a href='editUser.html?id=" + data[i].id + "' class='btn btn-primary'>Editer</a></div></div>");
+            }else{
+                $("#listAll").append("<div class='card' ><div class='card-body'><p>" + data[i].email + "</p><a href='editUser.html?id=" + data[i].id + "' class='btn btn-primary'>Editer</a></div></div>");
+            }
+        }
     }
 });

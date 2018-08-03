@@ -25,11 +25,11 @@ function connexion(e){
             success: function(data){
                 if (data.result == "true"){
                     $(".form-signin").html(
-                        '<div class="alert alert-success" role="alert"><p>Connexion réussie !</p><a href="users.html">Voir la liste des membres</a></div>'
+                        '<div class="alert alert-success" role="alert"><p>' + data.msg + '</p><a href="users.html">Afficher la liste des membres</a></div>'
                     );
                 } else {
                    $(
-                        '<div class="alert alert-danger" role="alert">Mauvais identifiants</div>'
+                    '<div class="alert alert-danger" role="alert">' + data.msg + "</div>"
                     ).insertAfter("h1");
                 }
             },

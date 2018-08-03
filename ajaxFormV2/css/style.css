@@ -3,7 +3,7 @@ body {
   height: 100%;
 }
 
-body {
+body:not(.user) {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -78,4 +78,8 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+#listAll{
+  column-count: 3;
 }
